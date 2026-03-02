@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Firmas - TRONE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .signature-container {
+            background: white;
+            border: 1px dashed #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body class="p-8">
+
+    <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+        <h1 class="text-3xl font-bold text-gray-800 mb-2">Generador de Firmas Electrónicas (Versión Producción)</h1>
+        <p class="text-gray-600 mb-6">Esta firma ya está conectada a los servidores de <strong>www.trone.cl</strong>.
+            Lista para copiar y pegar en Gmail.</p>
+
+        <!-- Pestañas de Selección -->
+        <div class="flex gap-4 mb-6 border-b pb-4 flex-wrap">
+            <button onclick="showSignature('daniel')"
+                class="px-4 py-2 bg-red-700 text-white rounded font-medium hover:bg-red-800 transition">Firma Daniel
+                Brito</button>
+            <button onclick="showSignature('jorge')"
+                class="px-4 py-2 bg-red-700 text-white rounded font-medium hover:bg-red-800 transition">Firma Jorge
+                Simon</button>
+            <button onclick="showSignature('franco')"
+                class="px-4 py-2 bg-red-700 text-white rounded font-medium hover:bg-red-800 transition">Firma Franco
+                Theler</button>
+        </div>
+
+        <!-- CONTENEDOR FIRMA DANIEL -->
+        <div id="daniel" class="signature-section block">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold text-gray-700">Firma de Daniel</h2>
+                <button onclick="copyToClipboard('firma-daniel')"
+                    class="px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition flex items-center gap-2 shadow">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3">
+                        </path>
+                    </svg>
+                    Copiar Firma
+                </button>
+            </div>
+
+            <div class="signature-container" id="firma-daniel">
+                <table width="680" cellpadding="0" cellspacing="0" border="0"
+                    style="font-family: Arial, sans-serif; background-color: #ffffff; margin: 0; padding: 0;">
+                    <tr>
+                        <td width="380" valign="top" style="padding-top: 5px;">
+                            <h1
+                                style="font-family: 'Times New Roman', Georgia, serif; font-size: 24px; color: #222222; margin: 0 0 4px 0; font-weight: normal;">
+                                Daniel Brito Rodríguez</h1>
+                            <p
+                                style="font-family: Arial, sans-serif; font-size: 15px; color: #777777; margin: 0 0 16px 0;">
+                                Gerente de Desarrollo Comercial</p>
+
+                            <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 16px;">
+                                <tr>
+                                    <td width="24" valign="middle" style="padding-bottom: 6px;">
+                                        <img src="https://img.icons8.com/ios-filled/50/b11116/phone.png" width="16"
+                                            height="16" alt="Teléfono" style="display:block;">
+                                    </td>
+                                    <td
+                                        style="font-family: Arial, sans-serif; font-size: 15px; color: #222222; padding-bottom: 6px;">
+                                        +56 9 8909 97093</td>
+                                </tr>
+                                <tr>
+                                    <td width="24" valign="middle">
+                                        <img src="https://img.icons8.com/ios-filled/50/b11116/new-post.png" width="16"
+                                            height="16" alt="Email" style="display:block;">
+                                    </td>
+                                    <td>
+                                        <a href="mailto:da.brito@trone.cl"
+                                            style="font-family: Arial, sans-serif; font-size: 15px; color: #222222; text-decoration: underline;">da.brito@trone.cl</a>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="42">
+                                        <!-- LinkedIn Deshabilitado -->
+                                        <a href="#" style="display: block; text-decoration: none; cursor: default;"
+                                            onclick="return false;">
+                                            <img src="https://www.trone.cl/logos/rrss/linkedin_icon_email.png"
+                                                width="34" height="34" alt="LinkedIn"
+                                                style="border: 0; display: block;">
+                                        </a>
+                                    </td>
+                                    <td width="42">
+                                        <a href="https://www.instagram.com/trone_spa/" target="_blank"
+                                            style="display: block; text-decoration: none;">
+                                            <img src="https://www.trone.cl/logos/rrss/instagram_icon_email.png"
+                                                width="34" height="34" alt="Instagram"
+                                                style="border: 0; display: block;">
+                                        </a>
+                                    </td>
+                                    <td width="42">
+                                        <a href="https://www.trone.cl" target="_blank"
+                                            style="display: block; text-decoration: none;">
+                                            <img src="https://www.trone.cl/logos/rrss/Trone_icon_email.png" width="34"
+                                                height="34" alt="Web TRONE" style="border: 0; display: block;">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+
+                        <td width="300" valign="middle" align="center">
+                            <img src="https://www.trone.cl/logos/rrss/Trone_logo_email.png" alt="TRONE" width="180"
+                                style="display:block; max-width: 180px; margin: 0 auto; margin-bottom: 12px;">
+                            <a href="https://www.trone.cl" target="_blank"
+                                style="font-family: Arial, sans-serif; font-size: 15px; color: #777777; text-decoration: underline;">www.trone.cl</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" style="padding-top: 20px; padding-bottom: 15px;">
+                            <div style="border-top: 1px solid #dcdcdc; width: 100%; font-size: 1px; line-height: 1px;">
+                                &nbsp;</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align="center">
+                            <img src="https://www.trone.cl/logos/rrss/logos_empresas_email.jpg" width="680"
+                                alt="Certificaciones DGAC, CDTI, PYME, ICEX, FEDER"
+                                style="display: block; max-width: 100%; height: auto; border: 0;">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- CONTENEDOR FIRMA JORGE -->
+        <div id="jorge" class="signature-section hidden">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold text-gray-700">Firma de Jorge</h2>
+                <button onclick="copyToClipboard('firma-jorge')"
+                    class="px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition flex items-center gap-2 shadow">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3">
+                        </path>
+                    </svg>
+                    Copiar Firma
+                </button>
+            </div>
+
+            <div class="signature-container" id="firma-jorge">
+                <table width="680" cellpadding="0" cellspacing="0" border="0"
+                    style="font-family: Arial, sans-serif; background-color: #ffffff; margin: 0; padding: 0;">
+                    <tr>
+                        <td width="380" valign="top" style="padding-top: 5px;">
+                            <h1
+                                style="font-family: 'Times New Roman', Georgia, serif; font-size: 24px; color: #222222; margin: 0 0 4px 0; font-weight: normal;">
+                                Jorge Simon Nuñez</h1>
+                            <p
+                                style="font-family: Arial, sans-serif; font-size: 15px; color: #777777; margin: 0 0 16px 0;">
+                                Gerente de Operaciones</p>
+
+                            <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 16px;">
+                                <tr>
+                                    <td width="24" valign="middle" style="padding-bottom: 6px;">
+                                        <img src="https://img.icons8.com/ios-filled/50/b11116/phone.png" width="16"
+                                            height="16" alt="Teléfono" style="display:block;">
+                                    </td>
+                                    <td
+                                        style="font-family: Arial, sans-serif; font-size: 15px; color: #222222; padding-bottom: 6px;">
+                                        +56 9 7971 7384</td>
+                                </tr>
+                                <tr>
+                                    <td width="24" valign="middle">
+                                        <img src="https://img.icons8.com/ios-filled/50/b11116/new-post.png" width="16"
+                                            height="16" alt="Email" style="display:block;">
+                                    </td>
+                                    <td>
+                                        <a href="mailto:jo.simon@trone.cl"
+                                            style="font-family: Arial, sans-serif; font-size: 15px; color: #222222; text-decoration: underline;">jo.simon@trone.cl</a>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="42">
+                                        <!-- LinkedIn Deshabilitado -->
+                                        <a href="#" style="display: block; text-decoration: none; cursor: default;"
+                                            onclick="return false;">
+                                            <img src="https://www.trone.cl/logos/rrss/linkedin_icon_email.png"
+                                                width="34" height="34" alt="LinkedIn"
+                                                style="border: 0; display: block;">
+                                        </a>
+                                    </td>
+                                    <td width="42">
+                                        <a href="https://www.instagram.com/trone_spa/" target="_blank"
+                                            style="display: block; text-decoration: none;">
+                                            <img src="https://www.trone.cl/logos/rrss/instagram_icon_email.png"
+                                                width="34" height="34" alt="Instagram"
+                                                style="border: 0; display: block;">
+                                        </a>
+                                    </td>
+                                    <td width="42">
+                                        <a href="https://www.trone.cl" target="_blank"
+                                            style="display: block; text-decoration: none;">
+                                            <img src="https://www.trone.cl/logos/rrss/Trone_icon_email.png" width="34"
+                                                height="34" alt="Web TRONE" style="border: 0; display: block;">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+
+                        <td width="300" valign="middle" align="center">
+                            <img src="https://www.trone.cl/logos/rrss/Trone_logo_email.png" alt="TRONE" width="180"
+                                style="display:block; max-width: 180px; margin: 0 auto; margin-bottom: 12px;">
+                            <a href="https://www.trone.cl" target="_blank"
+                                style="font-family: Arial, sans-serif; font-size: 15px; color: #777777; text-decoration: underline;">www.trone.cl</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" style="padding-top: 20px; padding-bottom: 15px;">
+                            <div style="border-top: 1px solid #dcdcdc; width: 100%; font-size: 1px; line-height: 1px;">
+                                &nbsp;</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align="center">
+                            <img src="https://www.trone.cl/logos/rrss/logos_empresas_email.jpg" width="680"
+                                alt="Certificaciones DGAC, CDTI, PYME, ICEX, FEDER"
+                                style="display: block; max-width: 100%; height: auto; border: 0;">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- CONTENEDOR FIRMA FRANCO -->
+        <div id="franco" class="signature-section hidden">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold text-gray-700">Firma de Franco</h2>
+                <button onclick="copyToClipboard('firma-franco')"
+                    class="px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition flex items-center gap-2 shadow">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3">
+                        </path>
+                    </svg>
+                    Copiar Firma
+                </button>
+            </div>
+
+            <div class="signature-container" id="firma-franco">
+                <table width="680" cellpadding="0" cellspacing="0" border="0"
+                    style="font-family: Arial, sans-serif; background-color: #ffffff; margin: 0; padding: 0;">
+                    <tr>
+                        <td width="380" valign="top" style="padding-top: 5px;">
+                            <h1
+                                style="font-family: 'Times New Roman', Georgia, serif; font-size: 24px; color: #222222; margin: 0 0 4px 0; font-weight: normal;">
+                                Franco Theler</h1>
+                            <p
+                                style="font-family: Arial, sans-serif; font-size: 15px; color: #777777; margin: 0 0 16px 0;">
+                                Comercial Manager</p>
+
+                            <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 16px;">
+                                <tr>
+                                    <td width="24" valign="middle" style="padding-bottom: 6px;">
+                                        <img src="https://img.icons8.com/ios-filled/50/b11116/phone.png" width="16"
+                                            height="16" alt="Teléfono" style="display:block;">
+                                    </td>
+                                    <td
+                                        style="font-family: Arial, sans-serif; font-size: 15px; color: #222222; padding-bottom: 6px;">
+                                        +56 9 9698 7728</td>
+                                </tr>
+                                <tr>
+                                    <td width="24" valign="middle">
+                                        <img src="https://img.icons8.com/ios-filled/50/b11116/new-post.png" width="16"
+                                            height="16" alt="Email" style="display:block;">
+                                    </td>
+                                    <td>
+                                        <a href="mailto:f.theler@trone.cl"
+                                            style="font-family: Arial, sans-serif; font-size: 15px; color: #222222; text-decoration: underline;">f.theler@trone.cl</a>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="42">
+                                        <!-- LinkedIn Deshabilitado -->
+                                        <a href="#" style="display: block; text-decoration: none; cursor: default;"
+                                            onclick="return false;">
+                                            <img src="https://www.trone.cl/logos/rrss/linkedin_icon_email.png"
+                                                width="34" height="34" alt="LinkedIn"
+                                                style="border: 0; display: block;">
+                                        </a>
+                                    </td>
+                                    <td width="42">
+                                        <a href="https://www.instagram.com/trone_spa/" target="_blank"
+                                            style="display: block; text-decoration: none;">
+                                            <img src="https://www.trone.cl/logos/rrss/instagram_icon_email.png"
+                                                width="34" height="34" alt="Instagram"
+                                                style="border: 0; display: block;">
+                                        </a>
+                                    </td>
+                                    <td width="42">
+                                        <a href="https://www.trone.cl" target="_blank"
+                                            style="display: block; text-decoration: none;">
+                                            <img src="https://www.trone.cl/logos/rrss/Trone_icon_email.png" width="34"
+                                                height="34" alt="Web TRONE" style="border: 0; display: block;">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+
+                        <td width="300" valign="middle" align="center">
+                            <img src="https://www.trone.cl/logos/rrss/Trone_logo_email.png" alt="TRONE" width="180"
+                                style="display:block; max-width: 180px; margin: 0 auto; margin-bottom: 12px;">
+                            <a href="https://www.trone.cl" target="_blank"
+                                style="font-family: Arial, sans-serif; font-size: 15px; color: #777777; text-decoration: underline;">www.trone.cl</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" style="padding-top: 20px; padding-bottom: 15px;">
+                            <div style="border-top: 1px solid #dcdcdc; width: 100%; font-size: 1px; line-height: 1px;">
+                                &nbsp;</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align="center">
+                            <img src="https://www.trone.cl/logos/rrss/logos_empresas_email.jpg" width="680"
+                                alt="Certificaciones DGAC, CDTI, PYME, ICEX, FEDER"
+                                style="display: block; max-width: 100%; height: auto; border: 0;">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function showSignature(id) {
+            document.querySelectorAll('.signature-section').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.signature-section').forEach(el => el.classList.remove('block'));
+            document.getElementById(id).classList.remove('hidden');
+            document.getElementById(id).classList.add('block');
+        }
+
+        function copyToClipboard(elementId) {
+            const el = document.getElementById(elementId);
+            const range = document.createRange();
+            range.selectNode(el);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                alert('¡Firma copiada con éxito! Ve a Gmail y pégala (Ctrl+V) en la caja de firmas.');
+            } catch (err) {
+                alert('No se pudo copiar. Intenta seleccionando manualmente.');
+            }
+            selection.removeAllRanges();
+        }
+    </script>
+</body>
+
+</html>
