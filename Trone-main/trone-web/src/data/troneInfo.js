@@ -1,11 +1,11 @@
-import { 
-  Sun, Zap, Crosshair, FileText, Database, Map as MapIcon, 
+import {
+  Sun, Zap, Crosshair, FileText, Database, Map as MapIcon,
   Cpu, ScanEye, ShieldCheck, Route, Activity // <--- ÍCONOS NUEVOS IMPORTADOS
 } from 'lucide-react';
 
 // --- IMÁGENES PARA EL VISOR (Previews) ---
 const excelPreview = "/demos/excel_demo.webp";
-const pdfPreview = "/demos/Informe_demo.pdf"; 
+const pdfPreview = "/demos/Informe_demo.pdf";
 const map1 = "/demos/carrousel1.webp";
 const map2 = "/demos/carrousel2.webp";
 const map3 = "/demos/carrousel3.webp";
@@ -36,7 +36,7 @@ export const services = [
     title: "Parques Fotovoltaicos",
     desc: "Inspección termográfica y visual con trazabilidad por módulo (PowerBlock – Fila – Columna).",
     details: ["Detección de Hotspots / Hot cells", "Strings desconectados", "Trackers no operativos", "Análisis de Shading y Soiling"],
-    stats: "+4.400 MW inspeccionados", 
+    stats: "+4.400 MW inspeccionados",
     statIcon: Zap, // Ícono de Rayo/Energía
     icon: Sun
   },
@@ -45,9 +45,9 @@ export const services = [
     title: "Líneas de Alta Tensión",
     desc: "Inspección vertical detallada de estructuras y conductores para mantenimiento preventivo.",
     details: ["Revisión de aisladores y herrajes", "Detección de puntos calientes", "Corrosión y corte de hebras", "Vegetación en franja de seguridad"],
-    stats: "+2.000 km inspeccionados", 
+    stats: "+2.000 km inspeccionados",
     statIcon: Route, // Ícono de Ruta/Distancia
-    icon: Zap 
+    icon: Zap
   },
   {
     id: 3,
@@ -79,7 +79,7 @@ export const equipment = [
     image: thermalCam,
     icon: ScanEye
   }
-  
+
 ];
 
 export const deliverables = [
@@ -89,7 +89,7 @@ export const deliverables = [
     desc: "Fichas individuales por hallazgo con imagen RGB, Térmica y ubicación georreferenciada.",
     icon: FileText,
     actionType: 'pdf',
-    content: pdfPreview 
+    content: pdfPreview
   },
   {
     id: 'excel',
@@ -105,13 +105,13 @@ export const deliverables = [
     desc: "Visión ejecutiva del activo completo para planificación logística de cuadrillas.",
     icon: MapIcon,
     actionType: 'carousel',
-    gallery: [map1, map2, map3, map4] 
+    gallery: [map1, map2, map3, map4]
   }
 ];
 
 export const clients = [
   { name: "Enel Green Power", url: "https://www.enelgreenpower.com/es/paises/sudamerica/chile", logo: "/logos/companies/enel.webp" },
-  { name: "Res", url: "https://www.res-group.com/", logo: "/logos/companies/res.svg" },
+  { name: "Atom-uas", url: "https://www.atom-uas.com//", logo: "/logos/companies/atom-uas.webp" },
   { name: "Ferrovial", url: "https://www.ferrovial.com/es-la/", logo: "/logos/companies/Ferrovial.webp" },
   { name: "DRS", url: "https://www.drsingenieria.com/", logo: "/logos/companies/drs.webp" },
   { name: "Zeitview", url: "https://www.zeitview.com/", logo: "/logos/companies/zeitview.webp" },
