@@ -14,8 +14,8 @@ import letrasTrone from '../assets/trone_letras.webp';
 import tdeTrone from '../assets/T_trone.webp';
 
 // --- IMPORTACIÓN DE LOGOS DEL FOOTER ---
-import footerLogo1 from '../assets/logos_footer/logo1.webp';
-import footerLogo2 from '../assets/logos_footer/logo2.webp';
+import footerLogo1 from '../assets/logos_footer/atom-uas.webp';
+import footerLogo2 from '../assets/logos_footer/Aerotools.webp';
 import footerLogo3 from '../assets/logos_footer/logo3.webp';
 import footerLogo4 from '../assets/logos_footer/logo4.webp';
 import dgacLogo from '../assets/logos_footer/DGAC.webp';
