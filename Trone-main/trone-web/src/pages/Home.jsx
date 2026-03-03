@@ -15,10 +15,7 @@ import tdeTrone from '../assets/T_trone.webp';
 
 // --- IMPORTACIÓN DE LOGOS DEL FOOTER ---
 import footerLogo1 from '../assets/logos_footer/atom-uas.webp';
-import footerLogo2 from '../assets/logos_footer/Aerotools.webp';
-import footerLogo3 from '../assets/logos_footer/logo3.webp';
-import footerLogo4 from '../assets/logos_footer/logo4.webp';
-import dgacLogo from '../assets/logos_footer/DGAC.webp';
+import footerLogo2 from '../assets/logos_footer/.webp';
 
 const Home = () => {
   // --- ESTADOS ---
