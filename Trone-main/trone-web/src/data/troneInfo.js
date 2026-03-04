@@ -111,7 +111,7 @@ export const deliverables = [
 
 export const clients = [
   { name: "Enel Green Power", url: "https://www.enelgreenpower.com/es/paises/sudamerica/chile", logo: "/logos/companies/enel.webp" },
-  { name: "Atom-uas", url: "https://www.atom-uas.com//", logo: "/logos/companies/atom-uas.webp" },
+  { name: "Aero-tools", url: "https://aerotools.es/", logo: "/logos/companies/aerotools-logo-1024x277.webp" },
   { name: "Ferrovial", url: "https://www.ferrovial.com/es-la/", logo: "/logos/companies/Ferrovial.webp" },
   { name: "DRS", url: "https://www.drsingenieria.com/", logo: "/logos/companies/drs.webp" },
   { name: "Zeitview", url: "https://www.zeitview.com/", logo: "/logos/companies/zeitview.webp" },

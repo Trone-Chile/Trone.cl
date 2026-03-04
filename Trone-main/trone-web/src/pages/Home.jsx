@@ -13,9 +13,10 @@ import { Turnstile } from '@marsidev/react-turnstile';
 import letrasTrone from '../assets/trone_letras.webp';
 import tdeTrone from '../assets/T_trone.webp';
 
-// --- IMPORTACIÓN DE LOGOS DEL FOOTER ---
+// --- IMPORTACIÓN DE LOGOS DEL FOOTER Y RESPALDOS ---
 import footerLogo1 from '../assets/logos_footer/atom-uas.png';
 import footerLogo2 from '../assets/logos_footer/Aerotools.png';
+import dgacLogo from '../assets/logos_footer/DGAC.webp';
 
 const Home = () => {
   // --- ESTADOS ---
@@ -147,9 +148,6 @@ const Home = () => {
     const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-    // Agrega esta línea para depurar:
-    console.log("Mis llaves son:", { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY });
 
     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
       .then((result) => {
@@ -404,7 +402,6 @@ const Home = () => {
                   <textarea id="message" name="message" rows="4" value={formMessage} onChange={(e) => setFormMessage(e.target.value)} className="w-full bg-gray-50 border border-gray-300 rounded-lg p-3 outline-none focus:border-trone-accent resize-none" placeholder="Detalles del proyecto, ubicación, fechas tentativas..." required></textarea>
                 </div>
 
-                {/* --- WIDGET CLOUDFLARE TURNSTILE --- */}
                 <div className="flex justify-center my-4">
                   <Turnstile
                     siteKey="0x4AAAAAACgoIerT1_rJiu5S"
@@ -414,7 +411,6 @@ const Home = () => {
                   />
                 </div>
 
-                {/* --- BOTÓN DE ENVÍO PROTEGIDO --- */}
                 <button
                   type="submit"
                   disabled={isSending || !turnstileToken}
@@ -428,39 +424,35 @@ const Home = () => {
         </div>
       </section>
 
-      {/* SECCIÓN RESPALDOS */}
+      {/* SECCIÓN RESPALDOS - ACTUALIZADA: REACCIONA AL HOVER Y REDIRIGE */}
       <section className="py-16 md:py-24 bg-white border-b border-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-
           <div className="w-full flex flex-col items-center justify-center mb-12 md:mb-16 lg:mb-20">
             <p className="text-trone-accent font-bold tracking-widest uppercase text-xs md:text-sm mb-4 text-center">
               Nuestros Respaldos
             </p>
-            <h2 className="md:hidden text-3xl font-black text-trone-primary uppercase text-center w-full leading-tight">
-              Certificaciones y <br /> Respaldo Técnico
-            </h2>
-            <h2 className="hidden md:flex w-full items-center justify-center gap-2 md:gap-3 lg:gap-4 text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-trone-primary uppercase">
-              <span className="flex-1 text-right whitespace-nowrap">Certificaciones</span>
-              <span className="flex-none text-center">Y</span>
-              <span className="flex-1 text-left whitespace-nowrap">Respaldo Técnico</span>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-trone-primary uppercase text-center w-full leading-tight">
+              Certificaciones y Respaldo Técnico
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-8 gap-y-12 md:gap-y-0">
-            <div className="flex justify-center md:justify-end items-center md:pr-10 xl:pr-32">
-              <img src={dgacLogo} alt="Certificación DGAC" loading="lazy" className="h-40 md:h-48 lg:h-64 w-auto object-contain hover:scale-105 transition-transform duration-300 drop-shadow-lg" />
+          <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-8 gap-y-12 md:gap-y-0 items-center">
+            {/* Logo DGAC */}
+            <div className="flex justify-center md:justify-end items-center md:pr-10 xl:pr-32 border-b md:border-b-0 md:border-r border-gray-100 pb-8 md:pb-0">
+              <a href="https://www.dgac.gob.cl/" target="_blank" rel="noopener noreferrer" className="block hover:scale-105 transition-transform duration-300 drop-shadow-lg">
+                <img src={dgacLogo} alt="Certificación DGAC" loading="lazy" className="h-44 md:h-52 lg:h-[17rem] w-auto object-contain" />
+              </a>
             </div>
 
-            <div className="flex justify-center md:justify-start items-center md:pl-10 xl:pl-32">
-              <div className="flex flex-col items-center md:items-start gap-6">
-                <div className="flex items-center justify-center md:justify-start gap-6 w-full">
-                  <img src={footerLogo3} alt="Pyme Innovadora" loading="lazy" className="h-16 md:h-16 lg:h-24 w-auto object-contain hover:scale-105 transition-transform duration-300" />
-                  <img src={footerLogo4} alt="Unión Europea FEDER" loading="lazy" className="h-10 md:h-10 lg:h-14 w-auto object-contain hover:scale-105 transition-transform duration-300" />
-                </div>
-                <div className="flex flex-col items-center md:items-start gap-4 w-full">
-                  <img src={footerLogo2} alt="Ministerio Ciencia - CDTI" loading="lazy" className="h-10 md:h-10 lg:h-14 w-auto object-contain hover:scale-105 transition-transform duration-300" />
-                  <img src={footerLogo1} alt="Gobierno de España - ICEX" loading="lazy" className="h-10 md:h-10 lg:h-14 w-auto object-contain hover:scale-105 transition-transform duration-300" />
-                </div>
+            {/* Logos Alianzas (Logo 1 y Logo 2) */}
+            <div className="flex justify-center md:justify-start items-center md:pl-10 xl:pl-32 pt-8 md:pt-0">
+              <div className="flex flex-col items-center md:items-start gap-10 md:gap-12">
+                <a href="https://www.atom-uas.com/" target="_blank" rel="noopener noreferrer" className="block hover:scale-105 transition-transform duration-300">
+                  <img src={footerLogo1} alt="Alianza Atom-UAS" loading="lazy" className="h-20 md:h-28 lg:h-36 w-auto object-contain" />
+                </a>
+                <a href="https://aerotools.es/" target="_blank" rel="noopener noreferrer" className="block hover:scale-105 transition-transform duration-300">
+                  <img src={footerLogo2} alt="Alianza Aerotools" loading="lazy" className="h-20 md:h-28 lg:h-36 w-auto object-contain" />
+                </a>
               </div>
             </div>
           </div>
@@ -499,7 +491,6 @@ const Home = () => {
           </button>
           <div className="w-full max-w-7xl h-[90vh] bg-white rounded-lg overflow-hidden relative flex flex-col shadow-2xl">
             <div className="flex-1 bg-gray-100 overflow-hidden relative flex items-center justify-center" onContextMenu={(e) => e.preventDefault()}>
-
               {modalData.actionType === 'pdf' && (
                 <div className="w-full h-full relative">
                   <iframe src={`${modalData.content}#toolbar=0&navpanes=0&scrollbar=0`} className="w-full h-full hidden md:block" title="Visor de PDF"></iframe>
@@ -511,13 +502,11 @@ const Home = () => {
                   </div>
                 </div>
               )}
-
               {modalData.actionType === 'image' && (
                 <div className="w-full h-full flex items-center justify-center bg-black p-4">
                   <img src={modalData.content} alt="Vista previa de documento" className="max-w-full max-h-full object-contain shadow-2xl" />
                 </div>
               )}
-
               {modalData.actionType === 'carousel' && modalData.gallery && (
                 <div className="relative w-full h-full bg-black flex items-center justify-center">
                   <img src={modalData.gallery[galleryIndex]} alt={`Imagen ${galleryIndex + 1} de la galería`} className="max-w-full max-h-full object-contain transition-opacity duration-500" />
@@ -530,21 +519,11 @@ const Home = () => {
                   </div>
                 </div>
               )}
-
               {modalData.actionType === 'text-carousel' && (
                 <div className="w-full h-full relative bg-white overflow-hidden rounded-lg">
-
-                  {/* CONTENEDOR PRINCIPAL: Slider horizontal con Scroll Snap */}
-                  <div
-                    id="innovative-slider"
-                    className="w-full h-full flex overflow-x-auto snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
-                  >
-
-                    {/* PANEL 1: INFORMACIÓN */}
-                    {/* pt-20 (padding-top) añadido para que el título no choque con la X de cerrar en móviles */}
+                  <div id="innovative-slider" className="w-full h-full flex overflow-x-auto snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                     <div className="w-full h-full shrink-0 snap-center snap-always flex flex-col justify-start p-6 pt-20 md:p-12 lg:p-20 relative bg-white overflow-y-auto">
                       <div className="max-w-3xl w-full mx-auto flex flex-col min-h-full">
-
                         <div className="flex-1">
                           <div className="inline-block mb-3 md:mb-4 px-3 py-1 bg-trone-primary/5 text-trone-primary text-[10px] md:text-sm font-bold tracking-widest uppercase rounded-full border border-trone-primary/10">
                             Resumen del Servicio
@@ -552,13 +531,11 @@ const Home = () => {
                           <h3 className="text-2xl md:text-4xl lg:text-5xl font-black text-trone-primary mb-4 md:mb-6 uppercase leading-tight pr-8">
                             {modalData.title}
                           </h3>
-
                           {modalData.textContent.intro && (
                             <p className="text-sm md:text-lg lg:text-xl leading-relaxed mb-6 font-medium text-gray-600">
                               {modalData.textContent.intro}
                             </p>
                           )}
-
                           {modalData.textContent.list && (
                             <ul className="space-y-3 md:space-y-6 mb-8">
                               {modalData.textContent.list.map((item, i) => (
@@ -570,55 +547,32 @@ const Home = () => {
                             </ul>
                           )}
                         </div>
-
-                        {/* Botonera Inferior Refinada */}
                         <div className="mt-auto pb-4 pt-4 border-t border-gray-100 flex flex-col items-center gap-3 w-full">
                           <div className="flex items-center gap-2 text-[10px] font-bold text-gray-400 animate-pulse md:hidden">
                             <ChevronRight size={14} /> Desliza para ver galería <ChevronRight size={14} />
                           </div>
-                          <button
-                            onClick={() => document.getElementById('innovative-slider').scrollBy({ left: window.innerWidth, behavior: 'smooth' })}
-                            className="group flex items-center justify-center gap-3 bg-trone-primary text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-base hover:bg-trone-accent transition-all duration-300 shadow-xl shadow-trone-primary/20 w-full md:w-auto"
-                          >
+                          <button onClick={() => document.getElementById('innovative-slider').scrollBy({ left: window.innerWidth, behavior: 'smooth' })} className="group flex items-center justify-center gap-3 bg-trone-primary text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-base hover:bg-trone-accent transition-all duration-300 shadow-xl shadow-trone-primary/20 w-full md:w-auto">
                             Ir a la Galería Interactiva <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
                           </button>
                         </div>
                       </div>
                     </div>
-
-                    {/* PANEL 2: CARRUSEL DE IMÁGENES */}
                     <div className="w-full h-full shrink-0 snap-center snap-always relative bg-black flex flex-col items-center justify-center">
-
-                      {/* Botón Flotante Reducido e Inteligente */}
-                      <button
-                        onClick={() => document.getElementById('innovative-slider').scrollBy({ left: -window.innerWidth, behavior: 'smooth' })}
-                        className="absolute top-4 left-4 z-50 flex items-center gap-1 bg-black/60 hover:bg-black/90 text-white px-3 py-2 md:px-5 md:py-2.5 rounded-full backdrop-blur-md transition-all border border-white/10 text-xs md:text-sm font-bold group"
-                      >
+                      <button onClick={() => document.getElementById('innovative-slider').scrollBy({ left: -window.innerWidth, behavior: 'smooth' })} className="absolute top-4 left-4 z-50 flex items-center gap-1 bg-black/60 hover:bg-black/90 text-white px-3 py-2 md:px-5 md:py-2.5 rounded-full backdrop-blur-md transition-all border border-white/10 text-xs md:text-sm font-bold group">
                         <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
                         <span className="hidden sm:inline">Volver a Detalles</span>
                         <span className="sm:hidden">Volver</span>
                       </button>
-
                       {modalData.gallery && modalData.gallery.length > 0 && (
-                        /* Quitamos los padding excesivos (p-0) para usar el 100% de la pantalla */
                         <div className="w-full h-full relative group flex items-center justify-center p-0">
-                          <img
-                            src={modalData.gallery[galleryIndex]}
-                            alt={`Demostración técnica ${galleryIndex + 1}`}
-                            className="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-500"
-                          />
-
+                          <img src={modalData.gallery[galleryIndex]} alt={`Demostración técnica ${galleryIndex + 1}`} className="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-500" />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 pointer-events-none"></div>
-
-                          {/* Controles del Carrusel desplazados a los extremos */}
                           <button onClick={prevGallery} aria-label="Imagen anterior" className="absolute left-1 md:left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-trone-accent p-2 md:p-3 rounded-full text-white backdrop-blur-sm transition-all border border-white/10">
                             <ChevronLeft size={24} className="md:w-7 md:h-7" />
                           </button>
                           <button onClick={nextGallery} aria-label="Imagen siguiente" className="absolute right-1 md:right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-trone-accent p-2 md:p-3 rounded-full text-white backdrop-blur-sm transition-all border border-white/10">
                             <ChevronRight size={24} className="md:w-7 md:h-7" />
                           </button>
-
-                          {/* Indicadores del carrusel interno reducidos en móvil */}
                           <div className="absolute bottom-6 md:bottom-10 left-0 right-0 flex justify-center gap-2 md:gap-3">
                             {modalData.gallery.map((_, i) => (
                               <div key={i} className={`h-1.5 md:h-2 rounded-full transition-all duration-300 shadow-sm ${i === galleryIndex ? 'w-8 md:w-12 bg-trone-accent' : 'w-2 md:w-3 bg-white/40 hover:bg-white/60'}`}></div>
@@ -627,7 +581,6 @@ const Home = () => {
                         </div>
                       )}
                     </div>
-
                   </div>
                 </div>
               )}
