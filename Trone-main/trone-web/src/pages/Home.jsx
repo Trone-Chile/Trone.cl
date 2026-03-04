@@ -14,8 +14,8 @@ import letrasTrone from '../assets/trone_letras.webp';
 import tdeTrone from '../assets/T_trone.webp';
 
 // --- IMPORTACIÓN DE LOGOS DEL FOOTER ---
-import footerLogo1 from '../assets/logos_footer/atom-uas.webp';
-import footerLogo2 from '../assets/logos_footer/.webp';
+import footerLogo1 from '../assets/logos_footer/atom-uas.png';
+import footerLogo2 from '../assets/logos_footer/Aerotools.png';
 
 const Home = () => {
   // --- ESTADOS ---
@@ -450,6 +450,7 @@ const Home = () => {
             <div className="flex justify-center md:justify-end items-center md:pr-10 xl:pr-32">
               <img src={dgacLogo} alt="Certificación DGAC" loading="lazy" className="h-40 md:h-48 lg:h-64 w-auto object-contain hover:scale-105 transition-transform duration-300 drop-shadow-lg" />
             </div>
+
             <div className="flex justify-center md:justify-start items-center md:pl-10 xl:pl-32">
               <div className="flex flex-col items-center md:items-start gap-6">
                 <div className="flex items-center justify-center md:justify-start gap-6 w-full">
