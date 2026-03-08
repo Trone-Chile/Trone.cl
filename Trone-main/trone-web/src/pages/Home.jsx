@@ -4,7 +4,8 @@ import { Helmet } from 'react-helmet-async';
 import { services, clients, companyInfo, deliverables, equipment } from '../data/troneInfo';
 import {
   Menu, X, ArrowRight, CheckCircle2,
-  Send, ChevronLeft, ChevronRight, Lock, Eye, MapPin, FileText, BarChart3
+  Send, ChevronLeft, ChevronRight, Lock, Eye, MapPin, FileText, BarChart3,
+  ShieldCheck, Thermometer, ClipboardList, HardHat, LineChart, FileSearch, Download
 } from 'lucide-react';
 
 // --- IMPORTACIÓN DE CLOUDFLARE TURNSTILE ---
@@ -134,9 +135,20 @@ const Home = () => {
   const handleRequestSample = () => {
     setContactType('empresa');
     setFormMessage("Hola, me interesa solicitar un ejemplo del reporte PDF y conocer más sobre sus entregables técnicos.");
-    setServiceType('otro');
+    setServiceType('informe-completo');
     const contactSection = document.getElementById('contacto');
     if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleRequestFullReport = () => {
+    setModalOpen(false);
+    setContactType('empresa');
+    setFormMessage("Hola, me interesa recibir el informe técnico completo (PDF + Excel) de un proyecto de referencia.");
+    setServiceType('informe-completo');
+    setTimeout(() => {
+      const contactSection = document.getElementById('contacto');
+      if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
+    }, 300);
   };
 
   const sendEmail = (e) => {
@@ -198,6 +210,7 @@ const Home = () => {
               <a href="#inicio" className="hover:text-trone-accent transition-colors">Inicio</a>
               <a href="#servicios" className="hover:text-trone-accent transition-colors">Servicios</a>
               <a href="#tecnologia" className="hover:text-trone-accent transition-colors">Tecnología</a>
+              <a href="#capacidades" className="hover:text-trone-accent transition-colors">Equipo</a>
               <a href="#entregables" className="hover:text-trone-accent transition-colors">Entregables</a>
             </div>
             <a href="#contacto" className="px-4 lg:px-6 py-2 bg-trone-accent text-white text-[10px] lg:text-xs font-bold rounded uppercase tracking-wider hover:bg-white hover:text-trone-primary transition-all shadow-lg shadow-orange-900/20">Cotizar</a>
@@ -216,6 +229,7 @@ const Home = () => {
             <a href="#inicio" onClick={() => setIsMenuOpen(false)} className="text-2xl font-bold text-white hover:text-trone-accent uppercase">Inicio</a>
             <a href="#servicios" onClick={() => setIsMenuOpen(false)} className="text-2xl font-bold text-white hover:text-trone-accent uppercase">Servicios</a>
             <a href="#tecnologia" onClick={() => setIsMenuOpen(false)} className="text-2xl font-bold text-white hover:text-trone-accent uppercase">Tecnología</a>
+            <a href="#capacidades" onClick={() => setIsMenuOpen(false)} className="text-2xl font-bold text-white hover:text-trone-accent uppercase">Equipo</a>
             <a href="#entregables" onClick={() => setIsMenuOpen(false)} className="text-2xl font-bold text-white hover:text-trone-accent uppercase">Entregables</a>
             <a href="#contacto" onClick={() => setIsMenuOpen(false)} className="text-2xl font-bold text-trone-accent uppercase mt-4">Cotizar</a>
           </div>
@@ -331,6 +345,36 @@ const Home = () => {
         </div>
       </section>
 
+      {/* EQUIPO Y CAPACIDADES TÉCNICAS */}
+      <section id="capacidades" className="py-16 lg:py-24 px-6 bg-trone-light">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12 lg:mb-16">
+            <p className="text-trone-accent font-bold tracking-widest uppercase text-xs md:text-sm mb-4">Nuestro Equipo</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-trone-primary mb-4 lg:mb-6">EQUIPO Y CAPACIDADES TÉCNICAS</h2>
+            <div className="h-2 w-16 md:w-24 bg-trone-accent mx-auto mb-4 lg:mb-6"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">Operaciones respaldadas por profesionales certificados con experiencia comprobada en terreno.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {[
+              { icon: ShieldCheck, title: "Pilotos Certificados DGAC", desc: "Operadores acreditados por la Dirección General de Aeronáutica Civil para vuelos comerciales con RPAS." },
+              { icon: HardHat, title: "Operaciones en Terreno", desc: "Equipo con experiencia en plantas solares, líneas de alta tensión y subestaciones a lo largo de Chile." },
+              { icon: Thermometer, title: "Análisis Termográfico", desc: "Especialistas en interpretación de imágenes térmicas para diagnóstico eléctrico y detección de anomalías." },
+              { icon: LineChart, title: "Procesamiento de Datos", desc: "Pipeline automatizado de procesamiento post-vuelo con algoritmos de detección y clasificación." },
+              { icon: ClipboardList, title: "Coordinación de Seguridad", desc: "Protocolos de seguridad operacional, evaluación de riesgos y gestión de permisos para cada misión." },
+              { icon: FileSearch, title: "Reportería Técnica", desc: "Generación de informes detallados con fichas por hallazgo, bases de datos y cartografía georreferenciada." }
+            ].map((cap, idx) => (
+              <div key={idx} className="group bg-white p-6 md:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-trone-accent/30">
+                <div className="w-12 h-12 bg-trone-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-trone-accent group-hover:text-white text-trone-accent transition-colors">
+                  <cap.icon size={24} strokeWidth={1.5} />
+                </div>
+                <h3 className="text-lg lg:text-xl font-bold text-trone-primary mb-2 group-hover:text-trone-accent transition-colors">{cap.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{cap.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ENTREGABLES */}
       <section id="entregables" className="py-16 lg:py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -377,7 +421,7 @@ const Home = () => {
                     <input id="company_name" type="text" name="company_name" className="w-full bg-gray-50 border border-gray-300 rounded-lg p-3 outline-none focus:border-trone-accent" placeholder="Ej. Constructora S.A." required />
                   </div>
                   <div><label htmlFor="empresa_email" className="block text-sm font-bold text-gray-700 mb-2">Email</label><input id="empresa_email" type="email" name="user_email" className="w-full bg-gray-50 border border-gray-300 rounded-lg p-3 outline-none focus:border-trone-accent" required /></div>
-                  <div><label htmlFor="empresa_phone" className="block text-sm font-bold text-gray-700 mb-2">Teléfono</label><input id="empresa_phone" type="tel" name="user_phone" className="w-full bg-gray-50 border border-gray-300 rounded-lg p-3 outline-none focus:border-trone-accent" required /></div>
+                  <div><label htmlFor="empresa_phone" className="block text-sm font-bold text-gray-700 mb-2">Teléfono <span className="font-normal text-gray-400">(Opcional)</span></label><input id="empresa_phone" type="tel" name="user_phone" className="w-full bg-gray-50 border border-gray-300 rounded-lg p-3 outline-none focus:border-trone-accent" /></div>
                 </div>
               )}
               {contactType === 'persona' && (
@@ -385,7 +429,7 @@ const Home = () => {
                   <div><label htmlFor="user_name" className="block text-sm font-bold text-gray-700 mb-2">Nombre</label><input id="user_name" type="text" name="user_name" className="w-full bg-gray-50 border border-gray-300 rounded-lg p-3 outline-none focus:border-trone-accent" required /></div>
                   <div><label htmlFor="user_lastname" className="block text-sm font-bold text-gray-700 mb-2">Apellido</label><input id="user_lastname" type="text" name="user_lastname" className="w-full bg-gray-50 border border-gray-300 rounded-lg p-3 outline-none focus:border-trone-accent" required /></div>
                   <div><label htmlFor="user_email" className="block text-sm font-bold text-gray-700 mb-2">Email</label><input id="user_email" type="email" name="user_email" className="w-full bg-gray-50 border border-gray-300 rounded-lg p-3 outline-none focus:border-trone-accent" required /></div>
-                  <div><label htmlFor="user_phone" className="block text-sm font-bold text-gray-700 mb-2">Teléfono</label><input id="user_phone" type="tel" name="user_phone" className="w-full bg-gray-50 border border-gray-300 rounded-lg p-3 outline-none focus:border-trone-accent" required /></div>
+                  <div><label htmlFor="user_phone" className="block text-sm font-bold text-gray-700 mb-2">Teléfono <span className="font-normal text-gray-400">(Opcional)</span></label><input id="user_phone" type="tel" name="user_phone" className="w-full bg-gray-50 border border-gray-300 rounded-lg p-3 outline-none focus:border-trone-accent" /></div>
                 </div>
               )}
               <div className="animate-fadeIn space-y-4 md:space-y-6">
@@ -394,6 +438,7 @@ const Home = () => {
                   <select id="service_type" name="service_type" value={serviceType} onChange={(e) => setServiceType(e.target.value)} className="w-full bg-gray-50 border border-gray-300 rounded-lg p-3 text-gray-600 outline-none focus:border-trone-accent" required>
                     <option value="" disabled>Selecciona una opción</option>
                     {serviceOptions.map((opt, i) => <option key={i} value={opt}>{opt}</option>)}
+                    <option value="informe-completo">Solicitar Informe Completo</option>
                     <option value="otro">Otro / Consulta General</option>
                   </select>
                 </div>
@@ -424,15 +469,15 @@ const Home = () => {
         </div>
       </section>
 
-      {/* SECCIÓN RESPALDOS - ACTUALIZADA: REACCIONA AL HOVER Y REDIRIGE */}
+      {/* SECCIÓN PARTNERS / ALIANZAS ESTRATÉGICAS */}
       <section className="py-16 md:py-24 bg-white border-b border-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="w-full flex flex-col items-center justify-center mb-12 md:mb-16 lg:mb-20">
             <p className="text-trone-accent font-bold tracking-widest uppercase text-xs md:text-sm mb-4 text-center">
-              Nuestros Respaldos
+              Nuestros Partners
             </p>
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-trone-primary uppercase text-center w-full leading-tight">
-              Certificaciones y Respaldo Técnico
+              Certificaciones y Alianzas Estratégicas
             </h2>
           </div>
 
@@ -508,15 +553,25 @@ const Home = () => {
                 </div>
               )}
               {modalData.actionType === 'carousel' && modalData.gallery && (
-                <div className="relative w-full h-full bg-black flex items-center justify-center">
-                  <img src={modalData.gallery[galleryIndex]} alt={`Imagen ${galleryIndex + 1} de la galería`} className="max-w-full max-h-full object-contain transition-opacity duration-500" />
-                  <button onClick={prevGallery} aria-label="Imagen anterior" className="absolute left-4 bg-white/10 hover:bg-white/30 text-white p-3 rounded-full backdrop-blur-sm transition-all"><ChevronLeft size={40} /></button>
-                  <button onClick={nextGallery} aria-label="Imagen siguiente" className="absolute right-4 bg-white/10 hover:bg-white/30 text-white p-3 rounded-full backdrop-blur-sm transition-all"><ChevronRight size={40} /></button>
-                  <div className="absolute bottom-6 flex gap-2">
-                    {modalData.gallery.map((_, i) => (
-                      <div key={i} className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all ${i === galleryIndex ? 'bg-trone-accent scale-125' : 'bg-white/40'}`}></div>
-                    ))}
+                <div className="relative w-full h-full bg-black flex flex-col items-center justify-center">
+                  <div className="flex-1 w-full flex items-center justify-center relative">
+                    <img src={modalData.gallery[galleryIndex]} alt={`Imagen ${galleryIndex + 1} de la galería`} className="max-w-full max-h-full object-contain transition-opacity duration-500" />
+                    <button onClick={prevGallery} aria-label="Imagen anterior" className="absolute left-4 bg-white/10 hover:bg-white/30 text-white p-3 rounded-full backdrop-blur-sm transition-all"><ChevronLeft size={40} /></button>
+                    <button onClick={nextGallery} aria-label="Imagen siguiente" className="absolute right-4 bg-white/10 hover:bg-white/30 text-white p-3 rounded-full backdrop-blur-sm transition-all"><ChevronRight size={40} /></button>
+                    <div className="absolute bottom-6 flex gap-2">
+                      {modalData.gallery.map((_, i) => (
+                        <div key={i} className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all ${i === galleryIndex ? 'bg-trone-accent scale-125' : 'bg-white/40'}`}></div>
+                      ))}
+                    </div>
                   </div>
+                  {modalData.id === 'informe-completo' && (
+                    <div className="w-full bg-gradient-to-t from-black via-black/90 to-transparent px-6 py-5 flex flex-col sm:flex-row items-center justify-center gap-3">
+                      <p className="text-white/70 text-sm text-center sm:text-left">¿Quieres recibir el informe completo?</p>
+                      <button onClick={handleRequestFullReport} className="inline-flex items-center gap-2 bg-trone-accent hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-full text-sm transition-all shadow-lg shadow-orange-900/30 whitespace-nowrap">
+                        <Download size={16} /> Solicitar Informe Completo
+                      </button>
+                    </div>
+                  )}
                 </div>
               )}
               {modalData.actionType === 'text-carousel' && (
