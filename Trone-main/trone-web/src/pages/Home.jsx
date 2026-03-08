@@ -447,11 +447,11 @@ const Home = () => {
             {/* Logos Alianzas (Logo 1 y Logo 2) */}
             <div className="flex justify-center md:justify-start items-center md:pl-10 xl:pl-32 pt-8 md:pt-0">
               <div className="flex flex-col items-center md:items-start gap-10 md:gap-12">
-                <a href="https://www.atom-uas.com/" target="_blank" rel="noopener noreferrer" className="block hover:scale-105 transition-transform duration-300">
-                  <img src={footerLogo1} alt="Alianza Atom-UAS" loading="lazy" className="h-20 md:h-28 lg:h-36 w-auto object-contain" />
-                </a>
                 <a href="https://aerotools.es/" target="_blank" rel="noopener noreferrer" className="block hover:scale-105 transition-transform duration-300">
                   <img src={footerLogo2} alt="Alianza Aerotools" loading="lazy" className="h-20 md:h-28 lg:h-36 w-auto object-contain" />
+                </a>
+                <a href="https://www.atom-uas.com/" target="_blank" rel="noopener noreferrer" className="block hover:scale-105 transition-transform duration-300">
+                  <img src={footerLogo1} alt="Alianza Atom-UAS" loading="lazy" className="h-20 md:h-28 lg:h-36 w-auto object-contain" />
                 </a>
               </div>
             </div>
