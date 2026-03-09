@@ -382,7 +382,7 @@ const Home = () => {
             <h2 className="text-3xl md:text-4xl font-black text-trone-primary mb-4">ENTREGABLES TÉCNICOS</h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">Visualiza ejemplos reales. Haz clic en las tarjetas para abrir la vista protegida.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {deliverables.map((item, idx) => (
               <div key={idx} onClick={() => openViewer(item)} className="group p-6 lg:p-8 bg-gray-50 border border-gray-100 rounded-xl hover:bg-white hover:shadow-xl hover:border-trone-accent/30 transition-all duration-300 cursor-pointer relative overflow-hidden">
                 <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity bg-trone-accent text-white text-[10px] lg:text-xs font-bold px-2 py-1 rounded">VER EJEMPLO</div>
