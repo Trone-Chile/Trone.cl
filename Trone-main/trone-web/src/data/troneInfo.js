@@ -119,7 +119,7 @@ export const deliverables = [
     desc: "Fichas PDF con imagen RGB, térmica y ubicación georreferenciada, junto al consolidado Excel.",
     icon: FileText,
     actionType: 'carousel',
-    gallery: [ASSETS.demos.pdfPage6, ASSETS.demos.pdfPage9, ASSETS.demos.excel]
+    gallery: [ASSETS.demos.pdfPage6, ASSETS.demos.pdfPage8, ASSETS.demos.pdfPage9, ASSETS.demos.excel]
   },
   {
     id: 'map',
