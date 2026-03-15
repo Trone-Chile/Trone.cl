@@ -1,6 +1,7 @@
 /**
  * TRONE Project - Asset Management
  * Centraliza todas las importaciones de assets y rutas de la carpeta pública.
+ * Configurado para gestionar equipamiento, tecnologías y acreditaciones de forma profesional.
  */
 
 // --- IMPORTACIÓN DE ASSETS (Vite procesa estos archivos en src/assets) ---
@@ -39,9 +40,11 @@ export const ASSETS = {
   },
   equipment: {
     droneM30T: `${PATH_IMG}/Dron_gif.gif`,
-    droneM3E: `${PATH_IMG}/Dron_gif.gif`, // Placeholder hasta imagen real
+    droneM3E: `${PATH_IMG}/mavic3e.webp`, // Nueva imagen para Mavic 3E
     thermal: `${PATH_IMG}/termografia_aerea.webp`,
-    controlStation: `${PATH_IMG}/DGAC.webp`
+    controlStation: `${PATH_IMG}/DGAC.webp`,
+    aiAnalysis: `${PATH_IMG}/ia_deteccion.webp`, // Nueva imagen para IA
+    gisMap: `${PATH_IMG}/gis_mapa.webp`       // Nueva imagen para GIS (la que ya tienes)
   },
   clients: {
     enel: `${PATH_CLIENTS}/enel.webp`,

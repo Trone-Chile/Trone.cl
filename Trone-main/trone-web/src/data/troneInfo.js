@@ -1,6 +1,7 @@
 /**
  * TRONE Project - Company Information & Services
  * Define la estructura de datos para servicios, equipamiento y entregables.
+ * Integra las nuevas llaves de ASSETS para el carrusel de equipamiento técnico.
  */
 
 import {
@@ -101,13 +102,13 @@ export const equipment = [
   {
     title: "Integración de Inteligencia Artificial",
     desc: "Algoritmos de visión por computadora para detección automática de anomalías y clasificación de hallazgos.",
-    image: ASSETS.equipment.thermal,
+    image: ASSETS.equipment.aiAnalysis,
     icon: BrainCircuit
   },
   {
     title: "Análisis GIS (Sistemas de Información Geográfica)",
     desc: "Procesamiento de datos georreferenciados para generar mapas de calor y ortomosaicos.",
-    image: ASSETS.equipment.thermal,
+    image: ASSETS.equipment.gisMap,
     icon: Globe2
   }
 ];
