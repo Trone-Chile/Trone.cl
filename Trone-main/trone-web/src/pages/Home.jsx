@@ -1,7 +1,13 @@
+/**
+ * TRONE | Home Page
+ * Componente principal que utiliza ASSETS centralizados para una gestión profesional.
+ */
+
 import React, { useState, useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { Helmet } from 'react-helmet-async';
 import { services, clients, companyInfo, deliverables, equipment } from '../data/troneInfo';
+import { ASSETS } from '../data/assets'; // <--- Única fuente de verdad para recursos
 import {
   Menu, X, ArrowRight, CheckCircle2,
   Send, ChevronLeft, ChevronRight, Lock, Eye, MapPin, FileText, BarChart3,
@@ -10,14 +16,6 @@ import {
 
 // --- IMPORTACIÓN DE CLOUDFLARE TURNSTILE ---
 import { Turnstile } from '@marsidev/react-turnstile';
-
-import letrasTrone from '../assets/trone_letras.webp';
-import tdeTrone from '../assets/T_trone.webp';
-
-// --- IMPORTACIÓN DE LOGOS DEL FOOTER Y RESPALDOS ---
-import footerLogo1 from '../assets/logos_footer/atom-uas.png';
-import footerLogo2 from '../assets/logos_footer/Aerotools.png';
-import dgacLogo from '../assets/logos_footer/DGAC.webp';
 
 const Home = () => {
   // --- ESTADOS ---
@@ -203,7 +201,7 @@ const Home = () => {
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-trone-primary/95 backdrop-blur-lg py-2 shadow-lg border-b border-white/5' : 'bg-transparent py-4 md:py-6'}`}>
         <div className="max-w-7xl mx-auto px-4 md:px-6 flex justify-between items-center">
           <a href="#" className="flex items-center relative z-20 shrink-0" aria-label="Ir al inicio">
-            <img src={tdeTrone} alt="TRONE Logo" width="48" height="48" className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-8 md:h-10' : 'h-10 md:h-12 lg:h-20'}`} />
+            <img src={ASSETS.logos.main} alt="TRONE Logo" width="48" height="48" className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-8 md:h-10' : 'h-10 md:h-12 lg:h-20'}`} />
           </a>
           <div className="hidden md:flex items-center gap-4 lg:gap-8">
             <div className="flex gap-4 lg:gap-6 text-xs lg:text-sm font-bold text-white/90 tracking-widest uppercase">
@@ -485,18 +483,18 @@ const Home = () => {
             {/* Logo DGAC */}
             <div className="flex justify-center md:justify-end items-center md:pr-10 xl:pr-32 border-b md:border-b-0 md:border-r border-gray-100 pb-8 md:pb-0">
               <a href="https://www.dgac.gob.cl/" target="_blank" rel="noopener noreferrer" className="block hover:scale-105 transition-transform duration-300 drop-shadow-lg">
-                <img src={dgacLogo} alt="Certificación DGAC" loading="lazy" className="h-44 md:h-52 lg:h-[17rem] w-auto object-contain" />
+                <img src={ASSETS.logos.dgac} alt="Certificación DGAC" loading="lazy" className="h-44 md:h-52 lg:h-[17rem] w-auto object-contain" />
               </a>
             </div>
 
-            {/* Logos Alianzas (Logo 1 y Logo 2) */}
+            {/* Logos Alianzas */}
             <div className="flex justify-center md:justify-start items-center md:pl-10 xl:pl-32 pt-8 md:pt-0">
               <div className="flex flex-col items-center md:items-start gap-10 md:gap-12">
                 <a href="https://aerotools.es/" target="_blank" rel="noopener noreferrer" className="block hover:scale-105 transition-transform duration-300">
-                  <img src={footerLogo2} alt="Alianza Aerotools" loading="lazy" className="h-20 md:h-28 lg:h-36 w-auto object-contain" />
+                  <img src={ASSETS.logos.partners.aerotools} alt="Alianza Aerotools" loading="lazy" className="h-20 md:h-28 lg:h-36 w-auto object-contain" />
                 </a>
                 <a href="https://www.atom-uas.com/" target="_blank" rel="noopener noreferrer" className="block hover:scale-105 transition-transform duration-300">
-                  <img src={footerLogo1} alt="Alianza Atom-UAS" loading="lazy" className="h-20 md:h-28 lg:h-36 w-auto object-contain" />
+                  <img src={ASSETS.logos.partners.atom} alt="Alianza Atom-UAS" loading="lazy" className="h-20 md:h-28 lg:h-36 w-auto object-contain" />
                 </a>
               </div>
             </div>
@@ -509,7 +507,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
             <div className="text-center md:text-left">
-              <img src={letrasTrone} alt="TRONE Logo" loading="lazy" width="120" height="40" className="h-8 md:h-10 mb-4 md:mb-6 w-auto object-contain mx-auto md:mx-0" />
+              <img src={ASSETS.logos.text} alt="TRONE Logo" loading="lazy" width="120" height="40" className="h-8 md:h-10 mb-4 md:mb-6 w-auto object-contain mx-auto md:mx-0" />
               <p className="text-[10px] md:text-xs">© {new Date().getFullYear()} Todos los derechos reservados.</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-6 md:gap-8 lg:gap-16 w-full md:w-auto justify-center md:justify-end">
