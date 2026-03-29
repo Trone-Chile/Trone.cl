@@ -483,9 +483,13 @@ const Home = () => {
             {/* Logo DGAC */}
             <div className="flex justify-center md:justify-end items-center md:pr-10 xl:pr-32 border-b md:border-b-0 md:border-r border-gray-100 pb-8 md:pb-0">
               <a href="https://www.dgac.gob.cl/" target="_blank" rel="noopener noreferrer" className="block hover:scale-105 transition-transform duration-300 drop-shadow-lg">
-                <img src={ASSETS.logos.dgac} alt="Certificación DGAC" loading="lazy" className="h-44 md:h-52 lg:h-[17rem] w-auto object-contain" />
+                <img src={ASSETS.logos.dgac} 
+                    alt="Certificación DGAC" 
+                    loading="lazy" 
+                    className="h-44 md:h-52 lg:h-[17rem] w-auto object-contain" />
               </a>
             </div>
+            
 
             {/* Logos Alianzas */}
             <div className="flex justify-center md:justify-start items-center md:pl-10 xl:pl-32 pt-8 md:pt-0">
