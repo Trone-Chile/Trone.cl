@@ -493,14 +493,18 @@ const Home = () => {
 
             {/* Logos Alianzas */}
             <div className="flex justify-center md:justify-start items-center md:pl-10 xl:pl-32 pt-8 md:pt-0">
-              <div className="flex flex-col items-center md:items-start gap-10 md:gap-12">
-                <a href="https://aerotools.es/" target="_blank" rel="noopener noreferrer" className="block hover:scale-105 transition-transform duration-300">
-                  <img src={ASSETS.logos.partners.aerotools} alt="Alianza Aerotools" loading="lazy" className="h-20 md:h-28 lg:h-36 w-auto object-contain" />
-                </a>
-                <a href="https://www.atom-uas.com/" target="_blank" rel="noopener noreferrer" className="block hover:scale-105 transition-transform duration-300">
-                  <img src={ASSETS.logos.partners.atom} alt="Alianza Atom-UAS" loading="lazy" className="h-20 md:h-28 lg:h-36 w-auto object-contain" />
-                </a>
-              </div>
+              <div className="flex justify-center md:justify-end items-center md:pr-10 xl:pr-32 border-b md:border-b-0 md:border-r border-gray-100 pb-8 md:pb-0">
+                  <a href="https://www.dgac.gob.cl/" target="_blank" rel="noopener noreferrer" className="block hover:scale-105 transition-transform duration-300 drop-shadow-lg">
+                    <img 
+                      src={ASSETS.logos.dgac} 
+                      alt="Certificación DGAC" 
+                      width="180" 
+                      height="291"
+                      fetchpriority="high"
+                      className="h-44 md:h-52 lg:h-[17rem] w-auto object-contain" 
+                    />
+                  </a>
+                </div>
             </div>
           </div>
         </div>
