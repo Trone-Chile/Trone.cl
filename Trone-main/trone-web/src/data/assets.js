@@ -40,11 +40,11 @@ export const ASSETS = {
   },
   equipment: {
     droneM30T: `${PATH_IMG}/Dron_gif.gif`,
-    droneM3E: `${PATH_IMG}/mavic3e.webp`, // Nueva imagen para Mavic 3E
-    thermal: `${PATH_IMG}/termografia_aerea.webp`,
+    droneM3E: `${PATH_IMG}/mavic3e.png`, // Nueva imagen para Mavic 3E
+    thermal: `${PATH_IMG}/termografia_aerea.png`,
     controlStation: `${PATH_IMG}/DGAC.webp`,
-    aiAnalysis: `${PATH_IMG}/ia_deteccion.webp`, // Nueva imagen para IA
-    gisMap: `${PATH_IMG}/gis_mapa.webp`       // Nueva imagen para GIS (la que ya tienes)
+    aiAnalysis: `${PATH_IMG}/ia_deteccion.jpg`, // Nueva imagen para IA
+    gisMap: `${PATH_IMG}/gis_mapa.png`       // Nueva imagen para GIS (la que ya tienes)
   },
   clients: {
     enel: `${PATH_CLIENTS}/enel.webp`,
