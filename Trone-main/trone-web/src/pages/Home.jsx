@@ -343,7 +343,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* EQUIPO Y CAPACIDADES TÉCNICAS */}
+{/* EQUIPO Y CAPACIDADES TÉCNICAS */}
       <section id="capacidades" className="py-16 lg:py-24 px-6 bg-trone-light">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 lg:mb-16">
@@ -361,11 +361,11 @@ const Home = () => {
               { icon: ClipboardList, title: "Coordinación de Seguridad", desc: "Protocolos de seguridad operacional, evaluación de riesgos y gestión de permisos para cada misión." },
               { icon: FileSearch, title: "Reportería Técnica", desc: "Generación de informes detallados con fichas por hallazgo, bases de datos y cartografía georreferenciada." }
             ].map((cap, idx) => (
-              <div key={idx} className="group bg-white p-6 md:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-trone-accent/30">
-                <div className="w-12 h-12 bg-trone-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-trone-accent group-hover:text-white text-trone-accent transition-colors">
+              <div key={idx} className="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-100">
+                <div className="w-12 h-12 bg-trone-accent/10 rounded-lg flex items-center justify-center mb-4 text-trone-accent">
                   <cap.icon size={24} strokeWidth={1.5} />
                 </div>
-                <h3 className="text-lg lg:text-xl font-bold text-trone-primary mb-2 group-hover:text-trone-accent transition-colors">{cap.title}</h3>
+                <h3 className="text-lg lg:text-xl font-bold text-trone-primary mb-2">{cap.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{cap.desc}</p>
               </div>
             ))}
