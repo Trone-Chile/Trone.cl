@@ -11,11 +11,12 @@ import footerLogo2 from '../assets/logos_footer/Aerotools.png';
 import dgacLogo from '../assets/logos_footer/DGAC.webp';
 
 // --- IMPORTACIÓN DE ASSETS (Equipamiento desde la nueva subcarpeta) ---
-import droneM30T from '../assets/equipment/Dron_gif.gif';
-import droneM3E from '../assets/equipment/mavic3e.png';
-import thermalImg from '../assets/equipment/termografia_aerea.png';
-import aiAnalysisImg from '../assets/equipment/ia_deteccion.jpg';
-import gisMapImg from '../assets/equipment/gis_mapa.png';
+import droneM30T from '../assets/equipment/Dron_gif.mp4';
+import droneM3E from '../assets/equipment/mavic3e.webp';
+import thermalImg from '../assets/equipment/termografia_aerea.webp';
+import aiAnalysisImg from '../assets/equipment/ia_deteccion.webp';
+import gisMapImg from '../assets/equipment/gis_mapa.webp';
+
 
 // --- RUTAS PÚBLICAS (Archivos que se quedan en la carpeta /public) ---
 const PATH_DEMOS = '/demos';

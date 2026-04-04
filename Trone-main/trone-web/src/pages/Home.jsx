@@ -309,7 +309,7 @@ const Home = () => {
         </div>
       </section>
 
-{/* TECNOLOGÍA */}
+      {/* TECNOLOGÍA */}
       <section id="tecnologia" className="py-16 lg:py-24 px-6 bg-trone-primary text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/5 to-transparent pointer-events-none"></div>
         <div className="max-w-7xl mx-auto relative z-10">
@@ -320,16 +320,32 @@ const Home = () => {
               <div className="absolute inset-0 bg-trone-accent/10 blur-[60px] md:blur-[100px] rounded-full"></div>
               
               {/* Renderizamos todas las imágenes para que se pre-carguen, pero solo mostramos la activa */}
-              {equipment.map((item, idx) => (
-                <img
-                  key={idx}
-                  src={item.image}
-                  alt={item.title}
-                  className={`absolute inset-0 h-full w-full object-contain drop-shadow-2xl transition-opacity duration-500 ease-in-out ${
-                    idx === techSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
-                  }`}
-                />
-              ))}
+              {equipment.map((item, idx) => {
+                const isVideo = typeof item.image === 'string' && item.image.includes('.mp4');
+
+                return isVideo ? (
+                  <video
+                    key={idx}
+                    src={item.image}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className={`absolute inset-0 h-full w-full object-contain drop-shadow-2xl transition-opacity duration-500 ease-in-out ${
+                      idx === techSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                    }`}
+                  />
+                ) : (
+                  <img
+                    key={idx}
+                    src={item.image}
+                    alt={item.title}
+                    className={`absolute inset-0 h-full w-full object-contain drop-shadow-2xl transition-opacity duration-500 ease-in-out ${
+                      idx === techSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                    }`}
+                  />
+                );
+              })}
             </div>
 
             <div className="order-2 lg:order-1 animate-fadeIn text-center lg:text-left">
@@ -361,7 +377,7 @@ const Home = () => {
         </div>
       </section>
 
-{/* EQUIPO Y CAPACIDADES TÉCNICAS */}
+      {/* EQUIPO Y CAPACIDADES TÉCNICAS */}
       <section id="capacidades" className="py-16 lg:py-24 px-6 bg-trone-light">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 lg:mb-16">
