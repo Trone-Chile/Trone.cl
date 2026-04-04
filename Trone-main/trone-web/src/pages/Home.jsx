@@ -352,6 +352,7 @@ const Home = () => {
             <div className="h-2 w-16 md:w-24 bg-trone-accent mx-auto mb-4 lg:mb-6"></div>
             <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">Operaciones respaldadas por profesionales certificados con experiencia comprobada en terreno.</p>
           </div>
+          
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {[
               { icon: ShieldCheck, title: "Pilotos Certificados DGAC", desc: "Operadores acreditados por la Dirección General de Aeronáutica Civil para vuelos comerciales con RPAS." },
@@ -361,12 +362,14 @@ const Home = () => {
               { icon: ClipboardList, title: "Coordinación de Seguridad", desc: "Protocolos de seguridad operacional, evaluación de riesgos y gestión de permisos para cada misión." },
               { icon: FileSearch, title: "Reportería Técnica", desc: "Generación de informes detallados con fichas por hallazgo, bases de datos y cartografía georreferenciada." }
             ].map((cap, idx) => (
-              <div key={idx} className="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-100">
-                <div className="w-12 h-12 bg-trone-accent/10 rounded-lg flex items-center justify-center mb-4 text-trone-accent">
+              <div key={idx} className="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-100 flex gap-4 md:gap-5">
+                <div className="flex-shrink-0 w-12 h-12 bg-trone-accent/10 rounded-lg flex items-center justify-center text-trone-accent border border-trone-accent/20">
                   <cap.icon size={24} strokeWidth={1.5} />
                 </div>
-                <h3 className="text-lg lg:text-xl font-bold text-trone-primary mb-2">{cap.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{cap.desc}</p>
+                <div>
+                  <h3 className="text-lg font-bold text-trone-primary mb-2">{cap.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{cap.desc}</p>
+                </div>
               </div>
             ))}
           </div>
