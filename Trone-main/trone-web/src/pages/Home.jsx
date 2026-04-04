@@ -309,19 +309,29 @@ const Home = () => {
         </div>
       </section>
 
-      {/* TECNOLOGÍA */}
+{/* TECNOLOGÍA */}
       <section id="tecnologia" className="py-16 lg:py-24 px-6 bg-trone-primary text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/5 to-transparent pointer-events-none"></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-4 items-center">
-            <div className="order-1 lg:order-2 flex justify-center items-center relative h-64 md:h-80 lg:h-[450px]">
+            
+            {/* Contenedor de Imágenes - SOLUCIÓN APLICADA AQUÍ */}
+            <div className="order-1 lg:order-2 flex justify-center items-center relative h-64 md:h-80 lg:h-[450px] w-full">
               <div className="absolute inset-0 bg-trone-accent/10 blur-[60px] md:blur-[100px] rounded-full"></div>
-              <img
-                src={equipment[techSlide].image}
-                alt={equipment[techSlide].title}
-                className="relative z-10 h-full w-full object-contain drop-shadow-2xl transition-all duration-500"
-              />
+              
+              {/* Renderizamos todas las imágenes para que se pre-carguen, pero solo mostramos la activa */}
+              {equipment.map((item, idx) => (
+                <img
+                  key={idx}
+                  src={item.image}
+                  alt={item.title}
+                  className={`absolute inset-0 h-full w-full object-contain drop-shadow-2xl transition-opacity duration-500 ease-in-out ${
+                    idx === techSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                  }`}
+                />
+              ))}
             </div>
+
             <div className="order-2 lg:order-1 animate-fadeIn text-center lg:text-left">
               <div className="flex items-center justify-center lg:justify-start gap-2 text-trone-accent font-bold tracking-widest uppercase mb-4 text-xs md:text-sm lg:text-base">
                 {React.createElement(equipment[techSlide].icon, { size: 18 })}
@@ -329,10 +339,18 @@ const Home = () => {
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 md:mb-6 leading-tight min-h-[2em] lg:min-h-[1.2em]">{equipment[techSlide].title}</h2>
               <p className="text-gray-200 text-sm md:text-base lg:text-lg mb-8 leading-relaxed min-h-[4em] max-w-lg mx-auto lg:mx-0">{equipment[techSlide].desc}</p>
+              
+              {/* Controles del Carrusel */}
               <div className="flex justify-center lg:justify-start gap-4">
-                <button onClick={prevTech} aria-label="Tecnología anterior" className="p-3 md:p-4 rounded-full border border-white/20 hover:bg-trone-accent hover:border-trone-accent transition-all group"><ChevronLeft size={20} className="md:w-6 md:h-6 group-hover:-translate-x-1 transition-transform" /></button>
-                <button onClick={nextTech} aria-label="Siguiente tecnología" className="p-3 md:p-4 rounded-full border border-white/20 hover:bg-trone-accent hover:border-trone-accent transition-all group"><ChevronRight size={20} className="md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" /></button>
+                <button onClick={prevTech} aria-label="Tecnología anterior" className="p-3 md:p-4 rounded-full border border-white/20 hover:bg-trone-accent hover:border-trone-accent transition-all group">
+                  <ChevronLeft size={20} className="md:w-6 md:h-6 group-hover:-translate-x-1 transition-transform" />
+                </button>
+                <button onClick={nextTech} aria-label="Siguiente tecnología" className="p-3 md:p-4 rounded-full border border-white/20 hover:bg-trone-accent hover:border-trone-accent transition-all group">
+                  <ChevronRight size={20} className="md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />
+                </button>
               </div>
+              
+              {/* Puntos de Paginación */}
               <div className="flex justify-center lg:justify-start gap-2 mt-8">
                 {equipment.map((_, idx) => (
                   <div key={idx} className={`h-1 rounded-full transition-all duration-300 ${idx === techSlide ? 'w-8 md:w-12 bg-trone-accent' : 'w-3 md:w-4 bg-gray-600'}`}></div>
