@@ -1,19 +1,24 @@
 /**
  * TRONE Project - Asset Management
  * Centraliza todas las importaciones de assets y rutas de la carpeta pública.
- * Configurado para gestionar equipamiento, tecnologías y acreditaciones de forma profesional.
  */
 
-// --- IMPORTACIÓN DE ASSETS (Vite procesa estos archivos en src/assets) ---
+// --- IMPORTACIÓN DE ASSETS (Logos) ---
 import letrasTrone from '../assets/trone_letras.webp';
 import tdeTrone from '../assets/T_trone.webp';
 import footerLogo1 from '../assets/logos_footer/atom-uas.png';
 import footerLogo2 from '../assets/logos_footer/Aerotools.png';
 import dgacLogo from '../assets/logos_footer/DGAC.webp';
 
-// --- RUTAS PÚBLICAS (Archivos que deben estar en la carpeta /public) ---
+// --- IMPORTACIÓN DE ASSETS (Equipamiento desde la nueva subcarpeta) ---
+import droneM30T from '../assets/equipment/Dron_gif.gif';
+import droneM3E from '../assets/equipment/mavic3e.png';
+import thermalImg from '../assets/equipment/termografia_aerea.png';
+import aiAnalysisImg from '../assets/equipment/ia_deteccion.jpg';
+import gisMapImg from '../assets/equipment/gis_mapa.png';
+
+// --- RUTAS PÚBLICAS (Archivos que se quedan en la carpeta /public) ---
 const PATH_DEMOS = '/demos';
-const PATH_IMG = '/img';
 const PATH_CLIENTS = '/logos/companies';
 
 export const ASSETS = {
@@ -39,12 +44,12 @@ export const ASSETS = {
     ]
   },
   equipment: {
-    droneM30T: `${PATH_IMG}/Dron_gif.gif`,
-    droneM3E: `${PATH_IMG}/mavic3e.png`, // Nueva imagen para Mavic 3E
-    thermal: `${PATH_IMG}/termografia_aerea.png`,
-    controlStation: `${PATH_IMG}/DGAC.webp`,
-    aiAnalysis: `${PATH_IMG}/ia_deteccion.jpg`, // Nueva imagen para IA
-    gisMap: `${PATH_IMG}/gis_mapa.png`       // Nueva imagen para GIS (la que ya tienes)
+    droneM30T: droneM30T,
+    droneM3E: droneM3E,
+    thermal: thermalImg,
+    controlStation: dgacLogo, 
+    aiAnalysis: aiAnalysisImg,
+    gisMap: gisMapImg
   },
   clients: {
     enel: `${PATH_CLIENTS}/enel.webp`,
